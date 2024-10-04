@@ -1,0 +1,222 @@
+
+/*MARTY BOP STYLING*/
+body{
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100vw; height: 100vh;
+  padding: 0; margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+  padding-bottom: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+.button{
+  padding:1em;
+  background-color: rgb(29, 185, 84,);
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 0.5em;
+  font-weight: bold;
+  transition: 0.5s;
+}
+.button:hover{
+  box-shadow: 0 0 1em rgba(29, 185, 84, 0.75);
+  transform: scale(110%, 110%);
+}
+
+#login{
+  z-index: 999;
+  position: absolute;
+  text-align: center;
+  margin: 0 auto;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -100%);
+}
+#login>a{
+  color: black!important;
+  background-color: #1db954;
+}
+#login>a>i{
+  margin-right: 1em;
+}
+#container{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100vw; height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  background-image: url("Marty_Stars.png");
+  background-size: cover;
+  background-position:bottom;
+}
+
+#martyBOP{
+  padding: 100px;
+  background-image: url("Body.png");
+  background-size:contain;
+  background-position:left;
+  background-repeat: no-repeat;
+  height: 75px;
+  position: absolute;
+  left: 12%;
+  top: 44%;
+  width: 50%;
+}
+
+#Lamp{
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+  width: 30%;
+}
+
+img#martyFace{
+  width: 175px;
+  position: absolute;
+  top: calc(-50%);
+  /* top: -140px; */
+  left: 74px;
+  z-index: 2;
+
+  animation-name: BOP;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+}
+
+img#martyBody{
+  width: 300px;
+  position: absolute;
+  top: 20px;
+  left: 80px;
+  z-index: 1;
+}
+#Rooftop{
+  position: absolute;
+  height: 60%;
+  bottom: 0; left: 0;
+}
+.logout{
+  position: fixed;right: 1em; top: 1em;
+  z-index: 999;
+  background-color: #b32525;
+  display: none;
+}
+.logout:hover{
+  box-shadow: 0 0 1em #b32525;
+}
+.currentPlaying{
+  z-index: 999;
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  text-align: right;
+
+  color: white;
+  font-weight: 100;
+}
+#songTitle{
+  font-size: 1.2em;
+}
+#songArtist{
+  font-size: 0.8em;
+  opacity: 0.5;
+}
+
+@keyframes BOP{
+  from{
+    transform: rotate(0deg), translate(0px , 0px);
+    transform: translate(0px , 0px);
+  }
+
+  to{
+    transform: rotate(2deg);
+    transform: translate(0px , 4px);
+   }
+}
+
+/*music notes*/
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color:#78ffef;
+}
+
+.muzieknootjes {
+  display: none;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: calc(-120%);
+  left: calc(2%);
+}
+
+.noot-1,
+.noot-2,
+.noot-3,
+.noot-4 {
+  position: absolute;
+  animation: notes 2s infinite linear;
+  font-size: 20px;
+  opacity: 0;
+  z-index: 99;
+}
+
+.noot-1 {
+  top: 200px;
+  left: 0;
+  animation-delay: 0.5s;
+  z-index: 4;
+}
+
+.noot-2 {
+  top: 140px;
+  left: 10%;
+  animation-delay: 1s;
+  z-index: 4;
+}
+
+.noot-3 {
+  top: 190px;
+  left: 20%;
+  animation-delay: 1.5s;
+  z-index: 4;
+}
+
+.noot-4 {
+  top: 260px;
+  left: 20%;
+  animation-delay: 2s;
+}
+
+@keyframes notes {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5) translate(50%, -50%);
+  }
+  80% {
+    opacity: 0;
+    transform: scale(1.5) translate(100%, -100%);
+  }
+  100% {
+    transform: scale(1.5) translate(100%, -100%);
+    opacity: 0;
+  }
+}
